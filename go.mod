@@ -19,7 +19,7 @@ require (
 	github.com/proullon/ramsql v0.1.3
 	github.com/rs/zerolog v1.31.0
 	github.com/spf13/cobra v1.8.0
-	github.com/stretchr/testify v1.8.4
+	github.com/stretchr/testify v1.9.0
 	github.com/tendermint/tendermint v0.35.9
 	google.golang.org/grpc v1.61.0
 	gopkg.in/yaml.v3 v3.0.1
@@ -292,7 +292,7 @@ require (
 	github.com/ssgreg/nlreturn/v2 v2.2.1 // indirect
 	github.com/status-im/keycard-go v0.2.0 // indirect
 	github.com/stbenjam/no-sprintf-host-port v0.1.1 // indirect
-	github.com/stretchr/objx v0.5.0 // indirect
+	github.com/stretchr/objx v0.5.2 // indirect
 	github.com/subosito/gotenv v1.4.2 // indirect
 	github.com/syndtr/goleveldb v1.0.1-0.20220721030215-126854af5e6d // indirect
 	github.com/t-yuki/gocover-cobertura v0.0.0-20180217150009-aaee18c8195c // indirect
