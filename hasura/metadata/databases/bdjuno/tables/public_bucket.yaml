@@ -1,0 +1,23 @@
+table:
+  name: bucket
+  schema: public
+select_permissions:
+  - permission:
+      allow_aggregations: false
+      columns:
+        - id
+        - bucket_name
+        - owner
+        - visibility
+        - source_type
+        - create_at
+        - payment_address
+        - bucket_status
+        - charged_read_quota
+        - global_virtual_group_family_id
+        - height
+        - sp_as_delegated_agent_disabled
+        - tags
+      filter: {}
+      limit: 100
+    role: anonymous

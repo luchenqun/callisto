@@ -8,11 +8,11 @@ chain:
         - consensus
         - gov
         - slashing
-        - staking
         - distribution
         - upgrade
         - actions
         - inflation
+        - storage
 node:
     type: remote
     config:
