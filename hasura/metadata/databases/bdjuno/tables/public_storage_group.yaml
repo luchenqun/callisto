@@ -1,0 +1,17 @@
+table:
+  name: storage_group
+  schema: public
+select_permissions:
+  - permission:
+      allow_aggregations: false
+      columns:
+        - id
+        - group_name
+        - owner
+        - source_type
+        - extra
+        - height
+        - tags
+      filter: {}
+      limit: 100
+    role: anonymous

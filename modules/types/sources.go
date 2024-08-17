@@ -15,6 +15,7 @@ import (
 	minttypes "github.com/cosmos/cosmos-sdk/x/mint/types"
 	slashingtypes "github.com/cosmos/cosmos-sdk/x/slashing/types"
 	stakingtypes "github.com/cosmos/cosmos-sdk/x/staking/types"
+	storagetypes "github.com/forbole/bdjuno/v4/modules/storage/types"
 	"github.com/forbole/juno/v5/node/local"
 
 	"cosmossdk.io/simapp/params"
@@ -44,6 +45,8 @@ import (
 	stakingsource "github.com/forbole/bdjuno/v4/modules/staking/source"
 	localstakingsource "github.com/forbole/bdjuno/v4/modules/staking/source/local"
 	remotestakingsource "github.com/forbole/bdjuno/v4/modules/staking/source/remote"
+	storagesource "github.com/forbole/bdjuno/v4/modules/storage/source"
+	remotestoragesource "github.com/forbole/bdjuno/v4/modules/storage/source/remote"
 	nodeconfig "github.com/forbole/juno/v5/node/config"
 )
 
@@ -55,6 +58,7 @@ type Sources struct {
 	MintSource      mintsource.Source
 	SlashingSource  slashingsource.Source
 	StakingSource   stakingsource.Source
+	StorageSource   storagesource.Source
 }
 
 func BuildSources(nodeCfg nodeconfig.Config, encodingConfig *params.EncodingConfig) (*Sources, error) {
@@ -128,5 +132,6 @@ func buildRemoteSources(cfg *remote.Details) (*Sources, error) {
 		MintSource:      remotemintsource.NewSource(source, minttypes.NewQueryClient(source.GrpcConn)),
 		SlashingSource:  remoteslashingsource.NewSource(source, slashingtypes.NewQueryClient(source.GrpcConn)),
 		StakingSource:   remotestakingsource.NewSource(source, stakingtypes.NewQueryClient(source.GrpcConn)),
+		StorageSource:   remotestoragesource.NewSource(source, storagetypes.NewQueryClient(source.GrpcConn)),
 	}, nil
 }

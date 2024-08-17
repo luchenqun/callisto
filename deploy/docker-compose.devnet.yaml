@@ -2,7 +2,7 @@ services:
   postgres:
     image: postgres:12
     ports:
-      - "5432:5432"
+      - "6543:5432"
     restart: always
     volumes:
       - ./data:/var/lib/postgresql/data
@@ -15,13 +15,13 @@ services:
   graphql-engine:
     image: hasura/graphql-engine:v2.22.1
     ports:
-      - "8080:8080"
+      - "9090:8080"
     depends_on:
       - "postgres"
     restart: always
     environment:
       HASURA_GRAPHQL_UNAUTHORIZED_ROLE: "anonymous"
-      ACTION_BASE_URL: "http://192.168.211.219:3000" ## 这里由于在容器里面启动得，所以要将localhost改为局域网地址
+      ACTION_BASE_URL: "http://154.48.244.46:3000" ## 这里由于在容器里面启动得，所以要将localhost改为局域网地址
       ## postgres database to store Hasura metadata
       HASURA_GRAPHQL_DATABASE_URL: postgres://postgres:postgres_mechain@postgres:5432/bdjuno
       ## this env var can be used to add the above postgres database to Hasura as a data source. this can be removed/updated based on your needs

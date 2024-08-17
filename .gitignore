@@ -8,7 +8,12 @@ config.yaml
 
 # Coverage
 coverage.*
-deploy/*
+deploy/data/*
 !deploy/dev.sh
 !deploy/config.yaml
 !deploy/docker-compose.yaml
+!deploy/genesis.json
+!deploy/package.json
+!deploy/client.js
+deploy/node_modules/
+.DS_Store
